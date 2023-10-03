@@ -23,6 +23,7 @@ public class DriveForward extends CommandBase {
   @Override
   public void initialize() {
     dt.tankDrive(0, 0);
+    dt.resetEncoders();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
