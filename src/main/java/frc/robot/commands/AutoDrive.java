@@ -12,6 +12,7 @@ public class DriveForward extends CommandBase {
 
   /** Creates a new DriveForward. */
   public DriveForward(DriveTrain dt, double setpoint) {
+    // You use the "this" keyword to access attributes of the object
     this.dt = dt;
     this.setpoint = setpoint;
 
