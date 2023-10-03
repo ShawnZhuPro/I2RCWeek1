@@ -67,6 +67,11 @@ public class DriveTrain extends SubsystemBase
   public double getTicks() {
     return (leftDriveTalon.getSelectedSensorPosition(0) + rightDriveTalon.getSelectedSensorPosition(0)) / 2.0;
   }
+
+  public double getDisplacement(){
+    // Diameter in meters of the wheel * pi / 4096 (this is the number of ticks per wheel revolution)
+    return 0;
+  }
  
   public double getAngle(){
     return navx.getAngle(); 
