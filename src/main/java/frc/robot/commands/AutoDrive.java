@@ -12,8 +12,9 @@ public class DriveForward extends CommandBase {
   double setpoint = 10.0;
 
   /** Creates a new DriveForward. */
-  public DriveForward(DriveTrain dt) {
+  public DriveForward(DriveTrain dt, double setpoint) {
     this.dt = dt;
+    this.setpoint = setpoint;
 
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(dt);
@@ -28,14 +29,14 @@ public class DriveForward extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    dt.tankDrive(5, 5);
+    dt.tankDrive(.5, .5);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
     
-    dt.tankDriveVolts(0, 0);
+    dt.tankDrive(0, 0);
   }
 
   // Returns true when the command should end.
