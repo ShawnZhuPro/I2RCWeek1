@@ -9,6 +9,7 @@ import frc.robot.subsystems.DriveTrain;
 
 public class DriveForward extends CommandBase {
   DriveTrain dt;
+  double setpoint;
 
   /** Creates a new DriveForward. */
   public DriveForward(DriveTrain dt, double setpoint) {
