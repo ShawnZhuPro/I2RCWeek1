@@ -12,11 +12,11 @@ public class PIDTurn extends CommandBase {
   DriveTrain dt; // Declare a reference to the DriveTrain subsystem.
   PIDController pid = new PIDController(0.2, 0.0, 0.04); // Create a PID controller with specific parameters.
 
-  double angle = 0.0; // Declare a variable to store the desired turn angle.
+  // double angle = 0.0; // Declare a variable to store the desired turn angle.
 
-  boolean reset = true; // Declare a boolean variable to determine if the heading should be reset.
+  // boolean reset = true; // Declare a boolean variable to determine if the heading should be reset.
 
-  double motorSign = 1.0; // Declare a variable to determine the direction of the turn.
+  // double motorSign = 1.0; // Declare a variable to determine the direction of the turn.
 
   public TurnCCW(double angle, DriveTrain dt, boolean reset) {
     this.dt = dt; // Initialize the DriveTrain reference.
