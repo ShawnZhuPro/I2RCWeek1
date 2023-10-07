@@ -30,6 +30,9 @@ public class RobotContainer {
 
   private final AutoDrive autoDrive = new AutoDrive(dt, 1.0);
 
+  private final PIDTurnCCW ccw = new TurnCCW(90, dt, false);
+
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     dt.setDefaultCommand(tankDrive);
@@ -57,6 +60,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return autoDrive;
+    return ccw;
   }
 }
