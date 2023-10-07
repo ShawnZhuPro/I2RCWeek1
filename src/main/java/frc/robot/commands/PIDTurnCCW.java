@@ -8,7 +8,7 @@ import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
 
-public class TurnCCW extends CommandBase {
+public class PIDTurn extends CommandBase {
   DriveTrain dt; // Declare a reference to the DriveTrain subsystem.
   PIDController pid = new PIDController(0.2, 0.0, 0.04); // Create a PID controller with specific parameters.
 
