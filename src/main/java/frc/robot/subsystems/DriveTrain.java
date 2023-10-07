@@ -69,9 +69,24 @@ public class DriveTrain extends SubsystemBase
   }
 
   public double getDisplacement(){
-    // Diameter in meters of the wheel * pi / 4096 (this is the number of ticks per wheel revolution)
+    // (Diameter in meters of the wheel * pi / 4096 (this is the number of ticks per wheel revolution)) * getTicks();
     return 0;
   }
+
+  /**
+   * Retrieves the robot's current heading in degrees and adjusts it for the standard counterclockwise measurement convention.
+   *
+   * @return The current orientation or heading of the robot in degrees.
+   */
+  public double getHeading() {
+    // The 'navx' object likely represents a sensor providing orientation data.
+    // 'getRotation2d()' retrieves the current 2D rotation information from the sensor.
+    // 'getDegrees()' obtains the rotation angle in degrees from the 2D rotation data.
+    // The negative sign is applied to ensure the angle is measured counterclockwise from a reference direction,
+    // aligning with the standard convention used in mathematics and robotics.
+    return -navx.getRotation2d().getDegrees();
+  }
+
  
   public double getAngle(){
     return navx.getAngle(); 
