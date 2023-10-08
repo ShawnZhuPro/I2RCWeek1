@@ -87,6 +87,9 @@ public class DriveTrain extends SubsystemBase
     return -navx.getRotation2d().getDegrees();
   }
 
+  public void zeroHeading() {
+    navx.reset();
+  }
  
   public double getAngle(){
     return navx.getAngle(); 
@@ -101,6 +104,7 @@ public class DriveTrain extends SubsystemBase
     SmartDashboard.putNumber("Left Voltage", leftDriveTalon.getMotorOutputPercent());
     SmartDashboard.putNumber("Right Voltage", rightDriveTalon.getMotorOutputPercent());
     SmartDashboard.putNumber("Angle", navx.getAngle());
+    SmartDashboard.putNumber("Displacement(meters)", getDisplacement());
 
     LeftVoltage.setDouble(leftDriveTalon.getMotorOutputPercent());
     RightVoltage.setDouble(rightDriveTalon.getMotorOutputPercent());

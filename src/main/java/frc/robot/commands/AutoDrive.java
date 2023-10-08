@@ -7,12 +7,12 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
 
-public class DriveForward extends CommandBase {
+public class AutoDrive extends CommandBase {
   DriveTrain dt;
   double setpoint;
 
   /** Creates a new DriveForward. */
-  public DriveForward(DriveTrain dt, double setpoint) {
+  public AutoDrive(DriveTrain dt, double setpoint) {
     // You use the "this" keyword to access attributes of the object
     this.dt = dt;
     this.setpoint = setpoint;
@@ -31,7 +31,6 @@ public class DriveForward extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    SmartDashboard.putnumber("Displacement(meters)", getDisplacement());
     dt.tankDrive(.5, .5);
   }
 
