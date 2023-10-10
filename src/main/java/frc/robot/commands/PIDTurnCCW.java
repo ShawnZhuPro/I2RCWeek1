@@ -10,7 +10,9 @@ import frc.robot.subsystems.DriveTrain;
 
 public class PIDTurnCCW extends CommandBase {
   DriveTrain dt; // Declare a reference to the DriveTrain subsystem.
-  PIDController pid = new PIDController(0.2, 0.0, 0.04); // Create a PID controller with specific parameters.
+
+  // To determine the kP constant, you will take your motor power and divide it by the setpoint (0.6/90)
+  PIDController pid = new PIDController(0.2, 0.0, 0.04);
 
   double angle = 0.0; // Declare a variable to store the desired turn angle.
   boolean reset = true; // Declare a boolean variable to determine if the heading should be reset.
