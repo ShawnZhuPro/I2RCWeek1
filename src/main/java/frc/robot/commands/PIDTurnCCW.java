@@ -15,13 +15,11 @@ public class PIDTurnCCW extends CommandBase {
   PIDController pid = new PIDController(0.2, 0.0, 0.04);
 
   double angle = 0.0; // Declare a variable to store the desired turn angle.
-  boolean reset = true; // Declare a boolean variable to determine if the heading should be reset.
   double motorSign = 1.0; // Declare a variable to determine the direction of the turn.
 
-  public PIDTurnCCW(double angle, DriveTrain dt, boolean reset) {
+  public PIDTurnCCW(double angle, DriveTrain dt) {
     this.dt = dt; // Initialize the DriveTrain reference.
     this.angle = angle; // Initialize the desired turn angle.
-    this.reset = reset; // Initialize whether to reset the heading or not.
 
     // Determine the direction of the turn based on the sign of 'angle'.
     if (angle > 0) {
@@ -37,9 +35,7 @@ public class PIDTurnCCW extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    if (reset) {
-      dt.zeroHeading(); // The heading represents the current orientation or angle of a robot or vehicle relative to a reference point or direction, typically measured in degrees.
-    }
+    dt.zeroHeading(); // The heading represents the current orientation or angle of a robot or vehicle relative to a reference point or direction, typically measured in degrees.
     dt.tankDrive(0, 0); // Stop the motors initially.
   }
 
