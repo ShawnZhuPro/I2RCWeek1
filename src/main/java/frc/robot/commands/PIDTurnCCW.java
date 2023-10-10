@@ -36,7 +36,7 @@ public class PIDTurnCCW extends CommandBase {
   @Override
   public void initialize() {
     dt.zeroHeading(); // The heading represents the current orientation or angle of a robot or vehicle relative to a reference point or direction, typically measured in degrees.
-    dt.tankDrive(0, 0); // Stop the motors initially.
+    dt.tankDrive(0, 0);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
