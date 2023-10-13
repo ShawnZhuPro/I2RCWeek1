@@ -15,7 +15,7 @@ public class PIDTurnCCW extends CommandBase {
   PIDController pid = new PIDController(0.2, 0.0, 0.04);
 
   double angle;
-  double motorSign;
+  int motorSign = 1; // Declare a variable to determine the direction of the turn.
 
   public PIDTurnCCW(double angle, DriveTrain dt) {
     this.dt = dt; // Initialize the DriveTrain reference.
@@ -23,9 +23,9 @@ public class PIDTurnCCW extends CommandBase {
 
     // Determine the direction of the turn based on the sign of 'angle'.
     if (angle > 0) {
-      motorSign = 1.0; // Clockwise turn
+      motorSign = 1; // Clockwise turn
     } else if (angle <= 0) {
-      motorSign = -1.0; // Counter-clockwise turn
+      motorSign = -1; // Counter-clockwise turn
     }
 
     // Use addRequirements() here to declare subsystem dependencies.
