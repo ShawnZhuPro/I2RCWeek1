@@ -23,9 +23,9 @@ public class PIDTurnCCW extends CommandBase {
 
     // Determine the direction of the turn based on the sign of 'angle'.
     if (angle > 0) {
-      motorSign = 1; // Clockwise turn
+      motorSign = 1; //Counter-clockwise turn
     } else if (angle <= 0) {
-      motorSign = -1; // Counter-clockwise turn
+      motorSign = -1; // clockwise turn
     }
 
     // Use addRequirements() here to declare subsystem dependencies.
