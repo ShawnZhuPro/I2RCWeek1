@@ -14,7 +14,7 @@ public class PIDTurnCCW extends CommandBase {
   // To determine the kP constant, you will take your motor power and divide it by the setpoint (0.6/90)
   PIDController pid = new PIDController(0.2, 0.0, 0.04);
 
-  double angle;
+  double angle; // Declare a variable to determine the turn angle 
   int motorSign; // Declare a variable to determine the direction of the turn.
 
   public PIDTurnCCW(double angle, DriveTrain dt) {
