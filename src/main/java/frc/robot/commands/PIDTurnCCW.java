@@ -20,6 +20,8 @@ public class PIDTurnCCW extends CommandBase {
   public PIDTurnCCW(double angle, DriveTrain dt) {
     this.dt = dt; // Initialize the DriveTrain reference.
     this.angle = angle; // Initialize the desired turn angle.
+    pid.setTolerance(5.0, 0.0); // Set an absolute error tolerance of 5 degrees and no rate error tolerance.
+    // pid.setSetpoint(angle);  setSetpoint is for exact values
 
     // Determine the direction of the turn based on the sign of 'angle'.
     if (angle > 0) {
