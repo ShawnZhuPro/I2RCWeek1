@@ -60,6 +60,15 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return ccw;
+    return new SequentialCommandGroup(
+      new AutoDrive(dt, 1.0),
+      new PIDTurnCCW(-90, dt),
+      new AutoDrive(dt, 1.0)
+
+      // This runs both autodrive and turn commands at the same time
+      new ParallelCommandGroup(
+          new AutoDrive(dt, 1.0), new PIDTurnCCW(90, dt)
+      )
+    );
   }
 }
