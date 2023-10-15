@@ -60,6 +60,8 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
+    
+    // Very basic example; Use just for reference
     return new SequentialCommandGroup(
       new AutoDrive(dt, 1.0),
       new PIDTurnCCW(-90, dt),
